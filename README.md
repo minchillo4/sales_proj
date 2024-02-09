@@ -12,9 +12,9 @@ Esse projeto visa fornecer insights sobre a performance de vendas do e-commerce 
 ### Limpeza/Preparação de Dados
 Nas etapa inicial de preparação dos dados, realizamos as seguintes tarefas:
 
-1.Upload e inspeção dos dados
-2.Tratamento de valores nulos e duplicados
-3.Formtação
+1. Upload e inspeção dos dados
+2. Tratamento de valores nulos e duplicados
+3. Formatação dos dados
 
 ### Análise Exploratória de Dados (EDA)
 Foi realizado o processo de EDA para responder perguntas como:
@@ -23,5 +23,33 @@ Foi realizado o processo de EDA para responder perguntas como:
 - Quais cidades e estados que trazem as maiores vendas e lucros? E as piores vendas?
 - Quais foram as categorias de produtos com as maiores margens de lucro?
 - Quais são os clientes mais assíduos?
+
+### Análise de Dados
+A segui um exemplo de query realizado no projeto. O resultado nos fornece o lucro e vendas por trimestre:
+```
+query = '''SELECT
+  quarter,
+  SUM(total_sales) AS total_sales,
+  SUM(total_profit) AS total_profit
+FROM (
+    SELECT
+      CASE
+        WHEN STRFTIME('%m', "Order Date") IN ('01','02','03') THEN 'Q1'
+        WHEN STRFTIME('%m', "Order Date") IN ('04','05','06') THEN 'Q2'
+        WHEN STRFTIME('%m', "Order Date") IN ('07','08','09') THEN 'Q3'
+        ELSE 'Q4'
+      END AS quarter,
+      SUM(Sales) AS total_sales,
+      SUM(Profit) AS total_profit
+    FROM Superstore
+    GROUP BY quarter
+) AS quarters
+GROUP BY quarter
+ORDER BY quarter;
+'''
+result = query_executer(query)
+result
+```
+
 
 ### Resultados/Conclusões
