@@ -6,7 +6,7 @@ Esse projeto visa fornecer insights sobre a performance de vendas do e-commerce 
 - [Dataset Kaggle: Superstore](https://www.kaggle.com/datasets/vivek468/superstore-dataset-final)
 ### Ferramentas
 - Python - Limpeza de Dados
-- SQL - Análise de Dados
+- SQL - Análise de Dados, Queries, Sub-Queries
 - Power BI - Visualização de Dados, DAX, Medidas Rápidas, Filtros,
 
 ### Limpeza/Preparação de Dados
