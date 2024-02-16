@@ -7,7 +7,7 @@ Esse projeto visa fornecer insights sobre a performance de vendas do e-commerce 
 ### Ferramentas
 - Python - Limpeza de Dados
 - SQL - Análise de Dados
-- Power BI - Visualização de Dados
+- Power BI - Visualização de Dados, DAX, Medidas Rápidas, Filtros,
 
 ### Limpeza/Preparação de Dados
 Nas etapa inicial de preparação dos dados, realizamos as seguintes tarefas:
@@ -24,8 +24,11 @@ Foi realizado o processo de EDA para responder perguntas como:
 - Quais foram as categorias de produtos com as maiores margens de lucro?
 - Quais são os clientes mais assíduos?
 
+### Modelagem
+ Não foi necessário realizar nenhum processo adicional de modelagem, uma vez que os dados fornecidos no arquivo CSV já estavam formatados e estruturados de maneira adequada para análise
+ 
 ### Análise de Dados
-A segui um exemplo de query realizado no projeto. O resultado nos fornece o lucro e vendas por trimestre:
+A segui um exemplo de query realizado no projeto ( disponível no arquivo superstore_analysis.ipynb para responder as perguntas de negócios. O resultado nos fornece o lucro e vendas por trimestre:
 ```
 query = '''SELECT
   quarter,
@@ -50,6 +53,16 @@ ORDER BY quarter;
 result = query_executer(query)
 result
 ```
+### Visualização de Dados
+
+Foi criado um painél no Power BI que permite visualizar:
+- Margem de Lucro
+- Vendas
+- Quantidade de Unidades Vendidas
+- Lucro e Vendas por Mês
+- Lucro por Estado
+- Vendas por Categoria e Sub-Categoria
+- Lucro por Método de Envio, Segmento e Região
+  
 
 
-### Resultados/Conclusões
