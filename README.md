@@ -63,6 +63,6 @@ Foi criado um painél no Power BI que permite visualizar:
 - Lucro por Estado
 - Vendas por Categoria e Sub-Categoria
 - Lucro por Método de Envio, Segmento e Região
-  
+  ![](dash.png)
 
 
